@@ -24,7 +24,7 @@ public class Doacao {
     @ManyToOne
     private Doador doador; 
 
-     @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING)
     private StatusDoacao status = StatusDoacao.DISPONIVEL;
 
     public Long getId() {
