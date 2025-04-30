@@ -1,14 +1,16 @@
 package Backend.Backend.service;
 
-import Backend.Backend.model.Doacao;
-import Backend.Backend.model.Doador;
-import Backend.Backend.Repository.Doacaorepository;
-import Backend.Backend.Repository.Doadorrepository;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import Backend.Backend.Repository.Doacaorepository;
+import Backend.Backend.Repository.Doadorrepository;
+import Backend.Backend.model.Doacao;
+import Backend.Backend.model.Doador;
+import Backend.Backend.model.StatusDoacao;
 
 @Service
 public class DoacaoService {
@@ -39,7 +41,7 @@ public class DoacaoService {
         return doacaoRepository.findById(id);
     }
 
-    public Doacao atualizarStatus(Long id, Doacao.StatusDoacao novoStatus) {
+    public Doacao atualizarStatus(Long id, StatusDoacao novoStatus) {
         Optional<Doacao> doacaoOptional = doacaoRepository.findById(id);
 
         if (doacaoOptional.isEmpty()) {

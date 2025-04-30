@@ -111,10 +111,4 @@ public class Doador extends Usuario {
         GRANDE
     }
 
-    public enum StatusDoacao {
-        DISPONIVEL,
-        RESERVADO,
-        ENTREGUE,
-        CANCELADO
-    }
 }

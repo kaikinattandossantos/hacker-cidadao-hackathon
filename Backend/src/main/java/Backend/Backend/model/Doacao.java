@@ -1,6 +1,5 @@
 package Backend.Backend.model;
 
-import Backend.Backend.model.Doador.StatusDoacao;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
