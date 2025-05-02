@@ -21,7 +21,7 @@ public class Doacao {
     private String categoria; 
 
     @ManyToOne
-    private Doador doador; 
+    private Doador doador; //Chave estrangeira de Doacao para Doador. Está sem Joincollumn pois o JPA já assume o ID padrão
 
     @Enumerated(EnumType.STRING)
     private StatusDoacao status = StatusDoacao.DISPONIVEL;

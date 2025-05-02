@@ -33,12 +33,12 @@ public class DoadorController {
     }
 
     @GetMapping("/{id}")
-    public Optional<Doador> buscarPorId(@PathVariable Long id) {
+    public Optional<Doador> buscarPorId(@PathVariable String id) {
         return doadorService.buscarPorId(id);
     }
 
     @DeleteMapping("/{id}")
-    public void deletar(@PathVariable Long id) {
+    public void deletar(@PathVariable String id) {
         doadorService.deletarDoador(id);
     }
 }

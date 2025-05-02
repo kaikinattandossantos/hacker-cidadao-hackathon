@@ -21,17 +21,19 @@ public class DoacaoService {
     @Autowired
     private Doadorrepository doadorRepository;
 
-    public Doacao salvarDoacao(Doacao doacao, Long idDoador) {
+    public Doacao salvarDoacao(Doacao doacao, String idDoador) {
         Optional<Doador> doadorOptional = doadorRepository.findById(idDoador);
-
+    
         if (doadorOptional.isEmpty()) {
             throw new IllegalArgumentException("Doador não encontrado");
         }
-
+    
         Doador doador = doadorOptional.get();
         doador.adicionarDoacao(doacao); 
-        return doacaoRepository.save(doacao);
+        doadorRepository.save(doador);   
+        return doacaoRepository.save(doacao);  
     }
+    
 
     public List<Doacao> listarDoacoes() {
         return doacaoRepository.findAll();

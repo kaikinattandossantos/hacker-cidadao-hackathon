@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import Backend.Backend.model.Doador;
 
 @Repository
-public interface Doadorrepository extends JpaRepository<Doador, Long> {
+public interface Doadorrepository extends JpaRepository<Doador, String> {
 
 }

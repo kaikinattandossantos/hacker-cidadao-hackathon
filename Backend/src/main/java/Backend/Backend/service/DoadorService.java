@@ -1,12 +1,13 @@
 package Backend.Backend.service;
 
-import Backend.Backend.model.Doador;
-import Backend.Backend.Repository.Doadorrepository;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import Backend.Backend.Repository.Doadorrepository;
+import Backend.Backend.model.Doador;
 
 @Service
 public class DoadorService {
@@ -26,11 +27,11 @@ public class DoadorService {
         return doadorRepository.findAll();
     }
 
-    public Optional<Doador> buscarPorId(Long id) {
+    public Optional<Doador> buscarPorId(String id) {
         return doadorRepository.findById(id);
     }
 
-    public void deletarDoador(Long id) {
+    public void deletarDoador(String id) {
         doadorRepository.deleteById(id);
     }
 }

@@ -1,12 +1,13 @@
 package Backend.Backend.model;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Embedded;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MappedSuperclass;
 
 
@@ -21,15 +22,14 @@ public abstract class Usuario {
     
     @Column(unique = true, nullable = false)
     private String email;
-    
-    @Embedded
-    private Endereco endereco;
-    
     private String telefone;
     
     @Enumerated(EnumType.STRING)
     private TipoUsuario tipo;
 
+    @ManyToOne
+    @JoinColumn(name = "cep")
+    private Endereco endereco;
 
     public Long getId() {
         return this.id;

@@ -1,27 +1,20 @@
 package Backend.Backend.model;
 
-import java.util.List;
-
 import jakarta.persistence.Column; 
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Receptor extends Usuario {
     @Column(unique = true)
     private String cpf;
     private Integer membrosFamilia;
-    
-    @OneToMany(mappedBy = "receptor")
-    private List<Match> matches;
 
-    public List<Match> getMatches() {
-        return matches;
-    }
+    @ManyToOne
+    @JoinColumn(name = "cep", referencedColumnName = "cep")
+    private Endereco endereco;
 
-    public void setMatches(List<Match> matches) {
-        this.matches = matches;
-    }
 
     public String getCpf() {
         return cpf;
@@ -37,6 +30,22 @@ public class Receptor extends Usuario {
 
     public void setMembrosFamilia(Integer membrosFamilia) {
         this.membrosFamilia = membrosFamilia;
+    }
+
+    @Override
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    @Override
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public enum NivelInseguranca {
+        SEVERA,
+        MÉDIA, 
+        BAIXA
     }
 
 }
