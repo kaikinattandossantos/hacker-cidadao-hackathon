@@ -13,17 +13,16 @@ Ela também direciona alimentos impróprios para o consumo humano para compostag
 ✅ Geração de pontuação e selos sociais para doadores  
 ✅ Visualização de doações por status  
 ✅ Integração com plano de compostagem  
-✅ API REST construída com Spring Boot + JPA  
+✅ API REST construída com Spring Boot + SQL  
 ✅ Estrutura preparada para integração com IA (classificação automática futura)
 
 ---
 
 ## 🛠️ Tecnologias utilizadas
 
-- Java 24
+- Java 17
 - Spring Boot
-- Spring Data JPA
-- H2
+- SQL
 - Maven
 - Postman (para testes)
 - Git + GitHub
